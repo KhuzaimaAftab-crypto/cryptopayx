@@ -32,7 +32,7 @@ try {
 if (users.length === 0) {
   users.push({
     id: 1,
-    email: 'khuzaima@cryptopayx.com',
+    email: '16B-061-SE@alumni.uit.edu',
     password: hashPassword('khuzaima123'), // Simple hash for demo
     firstName: 'Khuzaima',
     lastName: 'Aftab',
@@ -376,7 +376,7 @@ server.listen(PORT, () => {
   console.log(`  GET  http://localhost:${PORT}/health`);
   console.log('');
   console.log('👤 Pre-configured Admin Account:');
-  console.log('   Email: khuzaima@cryptopayx.com');
+  console.log('   Email: 16B-061-SE@alumni.uit.edu');
   console.log('   Password: khuzaima123');
   console.log(`   Total Users: ${users.length}`);
   console.log('');
