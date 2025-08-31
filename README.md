@@ -1,13 +1,13 @@
-# CryptoPayX - Professional Blockchain Development Portfolio 🚀
+# CryptoPayX - Professional Blockchain Development Portfolio
 ## Decentralized Payment & Wallet Platform | Full-Stack DApp | Smart Contract Development
-### 💼 Powered by **KhuzaimaAftab-crypto** - Professional Blockchain Developer
+### Powered by **Khuzaima Aftab** - Professional Blockchain Developer
 
-![CryptoPayX Logo](./frontend/public/logo192.png)
+![CryptoPayX Logo](./frontend/public/logo.svg)
 
-> **🎯 Available for Hire - Expert Blockchain Developer | React.js | Node.js | Solidity | Web3**
-> **👨‍💻 Developed by Khuzaima Aftab (@KhuzaimaAftab-crypto)**
-> **📧 Contact: 16B-061-SE@alumni.uit.edu**
-> **🔗 GitHub: https://github.com/KhuzaimaAftab-crypto/cryptopayx**
+> **Available for Hire - Expert Blockchain Developer | React.js | Node.js | Solidity | Web3**
+> **Developed by Khuzaima Aftab (@KhuzaimaAftab-crypto)**
+> **Contact: 16B-061-SE@alumni.uit.edu**
+> **GitHub: https://github.com/KhuzaimaAftab-crypto/cryptopayx**
 
 **CryptoPayX** is a comprehensive production-ready blockchain payment platform showcasing advanced full-stack development skills. This project demonstrates expertise in **smart contract development**, **DeFi protocols**, **React.js**, **Node.js**, **MongoDB**, and **Web3 integration** - perfect for clients seeking professional blockchain development services.
 
@@ -15,10 +15,10 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org/)
 [![React Version](https://img.shields.io/badge/react-%5E18.2.0-blue)](https://reactjs.org/)
 [![Solidity Version](https://img.shields.io/badge/solidity-%5E0.8.19-red)](https://soliditylang.org/)
-[![Hire Me](https://img.shields.io/badge/Status-Available%20for%20Hire-success)](mailto:contact@yourdevprofie.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-View%20Projects-orange)](https://yourportfolio.com)
+[![Hire Me](https://img.shields.io/badge/Status-Available%20for%20Hire-success)](mailto:16B-061-SE@alumni.uit.edu)
+[![Portfolio](https://img.shields.io/badge/Portfolio-View%20Projects-orange)](https://github.com/KhuzaimaAftab-crypto)
 
-### 💼 **Professional Blockchain Development Services**
+### Professional Blockchain Development Services
 - **Smart Contract Development** (Solidity, Vyper, Rust)
 - **DeFi Protocol Development** (DEX, Lending, Staking)
 - **NFT Marketplace Development**
@@ -30,51 +30,51 @@
 
 ---
 
-## 📸 **Live Demo & Screenshots**
+## **Live Demo & Screenshots**
 
-### 🏠 **Dashboard & Main Interface**
-![Dashboard Screenshot](./docs/screenshots/dashboard.png)
+### **Dashboard & Main Interface**
+![Dashboard Screenshot](./docs/screenshots/dashboard.html)
 *Modern, responsive dashboard with real-time balance tracking and transaction overview*
 
-### 💸 **Send Payment Interface**
-![Send Payment Screenshot](./docs/screenshots/send-payment.png)
+### **Send Payment Interface**
+![Send Payment Screenshot](./docs/screenshots/send-payment.html)
 *Intuitive payment interface with gas estimation and MetaMask integration*
 
 ### 💳 **Wallet Management**
-![Wallet Screenshot](./docs/screenshots/wallet.png)
+![Wallet Screenshot](./docs/screenshots/wallet.html)
 *Comprehensive wallet management with multi-currency support*
 
 ### 📊 **Transaction History**
-![Transactions Screenshot](./docs/screenshots/transactions.png)
+![Transactions Screenshot](./docs/screenshots/transactions.html)
 *Advanced transaction tracking with filtering and search capabilities*
 
 ### 🏪 **Merchant Dashboard**
-![Merchant Dashboard Screenshot](./docs/screenshots/merchant-dashboard.png)
+![Merchant Dashboard Screenshot](./docs/screenshots/merchant-dashboard.html)
 *Professional merchant interface with analytics and payment processing*
 
 ### 📱 **Mobile Responsive Design**
-![Mobile Screenshots](./docs/screenshots/mobile-views.png)
+![Mobile Screenshots](./docs/screenshots/mobile-views.html)
 *Fully responsive design optimized for all device sizes*
 
 ### 🔐 **Authentication & Security**
-![Login Screenshot](./docs/screenshots/login.png)
+![Login Screenshot](./docs/screenshots/login-page.html)
 *Secure authentication with MetaMask integration and JWT tokens*
 
 ---
 
 ## 💼 **Why Hire Me? - Proven Blockchain Development Expertise**
 
-### 🎯 **This Repository Demonstrates:**
-- ✅ **Production-Ready Code** - Enterprise-grade architecture and coding standards
-- ✅ **Full-Stack Mastery** - Complete blockchain application from smart contracts to UI
-- ✅ **Security Expertise** - Comprehensive security measures and best practices
-- ✅ **Modern Tech Stack** - Latest technologies and frameworks
-- ✅ **Scalable Design** - Architecture that grows with your business
-- ✅ **Professional Documentation** - Clear, comprehensive project documentation
-- ✅ **Testing Excellence** - 95%+ test coverage across all components
-- ✅ **DevOps Skills** - Complete deployment and automation scripts
+### **This Repository Demonstrates:**
+- **Production-Ready Code** - Enterprise-grade architecture and coding standards
+- **Full-Stack Mastery** - Complete blockchain application from smart contracts to UI
+- **Security Expertise** - Comprehensive security measures and best practices
+- **Modern Tech Stack** - Latest technologies and frameworks
+- **Scalable Design** - Architecture that grows with your business
+- **Professional Documentation** - Clear, comprehensive project documentation
+- **Testing Excellence** - 95%+ test coverage across all components
+- **DevOps Skills** - Complete deployment and automation scripts
 
-### 🚀 **Available Services:**
+### **Available Services:**
 - **Custom DApp Development** - Full-stack decentralized applications
 - **Smart Contract Auditing** - Security reviews and optimization
 - **Blockchain Consulting** - Architecture design and technical guidance
@@ -84,7 +84,7 @@
 - **Tokenomics Design** - Economic models and token utility
 - **Technical Team Leadership** - Senior developer and architect roles
 
-### 💡 **Industry Expertise:**
+### **Industry Expertise:**
 - **DeFi (Decentralized Finance)** - Protocols, DEXs, yield farming
 - **NFT & Gaming** - Marketplaces, gaming tokens, collectibles
 - **Enterprise Blockchain** - Private networks, supply chain
@@ -110,20 +110,20 @@
 
 ## 📈 **Performance Metrics & Quality Indicators**
 
-- ⚡ **Load Time:** < 2 seconds initial page load
-- 🧪 **Test Coverage:** 95%+ across all components
-- 🔒 **Security Score:** A+ rating with comprehensive auditing
-- 📱 **Mobile Performance:** 95+ Lighthouse score
-- ♿ **Accessibility:** WCAG 2.1 AA compliant
-- 🌍 **SEO Score:** 98+ for discoverability
-- 🚀 **Scalability:** Supports 10,000+ concurrent users
-- ⛽ **Gas Efficiency:** Optimized smart contracts (< 50k gas)
+- **Load Time:** < 2 seconds initial page load
+- **Test Coverage:** 95%+ across all components
+- **Security Score:** A+ rating with comprehensive auditing
+- **Mobile Performance:** 95+ Lighthouse score
+- **Accessibility:** WCAG 2.1 AA compliant
+- **SEO Score:** 98+ for discoverability
+- **Scalability:** Supports 10,000+ concurrent users
+- **Gas Efficiency:** Optimized smart contracts (< 50k gas)
 
 ---
 
 ## 🎖️ **Code Quality & Best Practices**
 
-### ✅ **Industry Standards Implemented:**
+### **Industry Standards Implemented:**
 - **Clean Code Architecture** - SOLID principles and design patterns
 - **Test-Driven Development** - Comprehensive unit and integration testing
 - **Security-First Approach** - OWASP guidelines and blockchain security

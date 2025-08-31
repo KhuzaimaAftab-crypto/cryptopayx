@@ -24,7 +24,7 @@ try {
     users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
   }
 } catch (error) {
-  console.log('📝 Creating new users database...');
+  console.log(`Creating new users database...`);
   users = [];
 }
 
@@ -133,7 +133,7 @@ const server = http.createServer(async (req, res) => {
   const pathname = parsedUrl.pathname;
   const method = req.method;
 
-  console.log(`📡 ${method} ${pathname}`);
+  console.log(`${method} ${pathname}`);
 
   try {
     // Health check
@@ -153,7 +153,7 @@ const server = http.createServer(async (req, res) => {
     if (pathname === '/api/auth/login' && method === 'POST') {
       const { email, password } = await parseBody(req);
       
-      console.log(`🔐 Login attempt for: ${email}`);
+      console.log(`Login attempt for: ${email}`);
 
       if (!email || !password) {
         return sendResponse(res, 400, {
@@ -184,7 +184,7 @@ const server = http.createServer(async (req, res) => {
 
       const token = generateToken(user.id);
 
-      console.log(`✅ Login successful for: ${user.firstName} ${user.lastName}`);
+      console.log(`Login successful for: ${user.firstName} ${user.lastName}`);
 
       return sendResponse(res, 200, {
         success: true,
@@ -209,7 +209,7 @@ const server = http.createServer(async (req, res) => {
     if (pathname === '/api/auth/register' && method === 'POST') {
       const { email, password, firstName, lastName, walletAddress } = await parseBody(req);
       
-      console.log(`📝 Registration attempt for: ${email}`);
+      console.log(`Registration attempt for: ${email}`);
 
       if (!email || !password || !firstName || !lastName || !walletAddress) {
         return sendResponse(res, 400, {
@@ -253,7 +253,7 @@ const server = http.createServer(async (req, res) => {
 
       const token = generateToken(newUser.id);
 
-      console.log(`✅ Registration successful for: ${newUser.firstName} ${newUser.lastName}`);
+      console.log(`Registration successful for: ${newUser.firstName} ${newUser.lastName}`);
 
       return sendResponse(res, 201, {
         success: true,
@@ -363,24 +363,24 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log('🚀 CryptoPayX Authentication Server Started!');
-  console.log(`📡 Server running on http://localhost:${PORT}`);
-  console.log(`👨‍💻 Developed by Khuzaima Aftab (@KhuzaimaAftab-crypto)`);
-  console.log(`🔗 GitHub: https://github.com/KhuzaimaAftab-crypto/cryptopayx`);
+  console.log('CryptoPayX Authentication Server Started!');
+  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Developed by Khuzaima Aftab (@KhuzaimaAftab-crypto)`);
+  console.log(`GitHub: https://github.com/KhuzaimaAftab-crypto/cryptopayx`);
   console.log('');
-  console.log('🔐 Authentication Endpoints:');
+  console.log('Authentication Endpoints:');
   console.log(`  POST http://localhost:${PORT}/api/auth/login`);
   console.log(`  POST http://localhost:${PORT}/api/auth/register`);
   console.log(`  GET  http://localhost:${PORT}/api/auth/profile`);
   console.log(`  GET  http://localhost:${PORT}/api/users`);
   console.log(`  GET  http://localhost:${PORT}/health`);
   console.log('');
-  console.log('👤 Pre-configured Admin Account:');
+  console.log('Pre-configured Admin Account:');
   console.log('   Email: 16B-061-SE@alumni.uit.edu');
   console.log('   Password: khuzaima123');
   console.log(`   Total Users: ${users.length}`);
   console.log('');
-  console.log('🔥 Ready to accept authentication requests!');
+  console.log('Ready to accept authentication requests!');
 });
 
 module.exports = server;
