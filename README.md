@@ -1,11 +1,13 @@
 # CryptoPayX - Professional Blockchain Development Portfolio 🚀
 ## Decentralized Payment & Wallet Platform | Full-Stack DApp | Smart Contract Development
-### 💼 Powered by **Khuzaima_Epsilonkz** - Professional Blockchain Developer
+### 💼 Powered by **KhuzaimaAftab-crypto** - Professional Blockchain Developer
 
 ![CryptoPayX Logo](./frontend/public/logo192.png)
 
 > **🎯 Available for Hire - Expert Blockchain Developer | React.js | Node.js | Solidity | Web3**
-> **👨‍💻 Developed by Khuzaima Aftab (Khuzaima_Epsilonkz)**
+> **👨‍💻 Developed by Khuzaima Aftab (@KhuzaimaAftab-crypto)**
+> **📧 Contact: 16B-061-SE@alumni.uit.edu**
+> **🔗 GitHub: https://github.com/KhuzaimaAftab-crypto/cryptopayx**
 
 **CryptoPayX** is a comprehensive production-ready blockchain payment platform showcasing advanced full-stack development skills. This project demonstrates expertise in **smart contract development**, **DeFi protocols**, **React.js**, **Node.js**, **MongoDB**, and **Web3 integration** - perfect for clients seeking professional blockchain development services.
 

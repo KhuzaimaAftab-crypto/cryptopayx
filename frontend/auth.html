@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPayX - Authentication</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .developer-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .developer-info h3 {
+            color: #4169E1;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .developer-info p {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .toggle-form {
+            text-align: center;
+            color: #666;
+        }
+
+        .toggle-form a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toggle-form a:hover {
+            text-decoration: underline;
+        }
+
+        .message {
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .user-info {
+            background: #e8f5e8;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .user-info h3 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-info p {
+            color: #2d5016;
+            margin-bottom: 0.25rem;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        .api-status {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            background: #e8f4f8;
+            border: 1px solid #bee5eb;
+        }
+
+        .api-status.connected {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .api-status.disconnected {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 CryptoPayX</h1>
+            <p>Decentralized Payment Platform</p>
+        </div>
+
+        <div class="developer-info">
+            <h3>👨‍💻 Developed by KhuzaimaAftab-crypto</h3>
+            <p>GitHub: @KhuzaimaAftab-crypto | Email: 16B-061-SE@alumni.uit.edu</p>
+        </div>
+
+        <div id="apiStatus" class="api-status">
+            Checking API connection...
+        </div>
+
+        <div id="messageBox"></div>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" value="16B-061-SE@alumni.uit.edu" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" value="khuzaima123" required>
+                </div>
+                <button type="submit" class="btn" id="loginBtn">Login</button>
+            </form>
+            <div class="toggle-form">
+                Don't have an account? <a href="#" id="showSignup">Sign up here</a>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" class="hidden">
+            <form id="signupFormElement">
+                <div class="form-group">
+                    <label for="signupFirstName">First Name:</label>
+                    <input type="text" id="signupFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupLastName">Last Name:</label>
+                    <input type="text" id="signupLastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupWallet">Wallet Address:</label>
+                    <input type="text" id="signupWallet" placeholder="0x..." required>
+                </div>
+                <button type="submit" class="btn" id="signupBtn">Sign Up</button>
+            </form>
+            <div class="toggle-form">
+                Already have an account? <a href="#" id="showLogin">Login here</a>
+            </div>
+        </div>
+
+        <!-- User Dashboard -->
+        <div id="userDashboard" class="hidden">
+            <div class="user-info">
+                <h3>Welcome to CryptoPayX!</h3>
+                <div id="userDetails"></div>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080';
+        let currentUser = null;
+        let authToken = null;
+
+        // DOM Elements
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const userDashboard = document.getElementById('userDashboard');
+        const messageBox = document.getElementById('messageBox');
+        const apiStatus = document.getElementById('apiStatus');
+
+        // Check API connectivity on load
+        window.addEventListener('load', checkAPIConnection);
+
+        async function checkAPIConnection() {
+            try {
+                const response = await fetch(`${API_BASE}/health`);
+                if (response.ok) {
+                    const data = await response.json();
+                    showAPIStatus('connected', '✅ Connected to CryptoPayX API');
+                } else {
+                    showAPIStatus('disconnected', '❌ API connection failed');
+                }
+            } catch (error) {
+                showAPIStatus('disconnected', '❌ Cannot connect to API. Make sure the server is running on port 8080.');
+            }
+        }
+
+        function showAPIStatus(status, message) {
+            apiStatus.className = `api-status ${status}`;
+            apiStatus.textContent = message;
+        }
+
+        function showMessage(message, type = 'success') {
+            messageBox.innerHTML = `<div class="message ${type}">${message}</div>`;
+            setTimeout(() => {
+                messageBox.innerHTML = '';
+            }, 5000);
+        }
+
+        function showLogin() {
+            loginForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            userDashboard.classList.add('hidden');
+        }
+
+        function showSignup() {
+            loginForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+            userDashboard.classList.add('hidden');
+        }
+
+        function showDashboard() {
+            loginForm.classList.add('hidden');
+            signupForm.classList.add('hidden');
+            userDashboard.classList.remove('hidden');
+        }
+
+        // Event Listeners
+        document.getElementById('showSignup').addEventListener('click', (e) => {
+            e.preventDefault();
+            showSignup();
+        });
+
+        document.getElementById('showLogin').addEventListener('click', (e) => {
+            e.preventDefault();
+            showLogin();
+        });
+
+        // Login Form
+        document.getElementById('loginFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const loginBtn = document.getElementById('loginBtn');
+
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Logging in...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentUser = data.data.user;
+                    authToken = data.data.token;
+                    
+                    // Store in localStorage
+                    localStorage.setItem('cryptopayx_token', authToken);
+                    localStorage.setItem('cryptopayx_user', JSON.stringify(currentUser));
+                    
+                    showMessage('Login successful! Welcome to CryptoPayX!', 'success');
+                    displayUserInfo();
+                    showDashboard();
+                } else {
+                    showMessage(data.message || 'Login failed', 'error');
+                }
+            } catch (error) {
+                showMessage('Connection error. Please check if the server is running.', 'error');
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Login';
+            }
+        });
+
+        // Signup Form
+        document.getElementById('signupFormElement').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('signupFirstName').value;
+            const lastName = document.getElementById('signupLastName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const walletAddress = document.getElementById('signupWallet').value;
+            const signupBtn = document.getElementById('signupBtn');
+
+            signupBtn.disabled = true;
+            signupBtn.textContent = 'Signing up...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        firstName, 
+                        lastName, 
+                        email, 
+                        password, 
+                        walletAddress 
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentUser = data.data.user;
+                    authToken = data.data.token;
+                    
+                    // Store in localStorage
+                    localStorage.setItem('cryptopayx_token', authToken);
+                    localStorage.setItem('cryptopayx_user', JSON.stringify(currentUser));
+                    
+                    showMessage('Registration successful! Welcome to CryptoPayX!', 'success');
+                    displayUserInfo();
+                    showDashboard();
+                } else {
+                    showMessage(data.message || 'Registration failed', 'error');
+                }
+            } catch (error) {
+                showMessage('Connection error. Please check if the server is running.', 'error');
+            } finally {
+                signupBtn.disabled = false;
+                signupBtn.textContent = 'Sign Up';
+            }
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            currentUser = null;
+            authToken = null;
+            localStorage.removeItem('cryptopayx_token');
+            localStorage.removeItem('cryptopayx_user');
+            showMessage('Logged out successfully!', 'success');
+            showLogin();
+        });
+
+        function displayUserInfo() {
+            if (currentUser) {
+                const userDetails = document.getElementById('userDetails');
+                userDetails.innerHTML = `
+                    <p><strong>Name:</strong> ${currentUser.firstName} ${currentUser.lastName}</p>
+                    <p><strong>Email:</strong> ${currentUser.email}</p>
+                    <p><strong>Wallet:</strong> ${currentUser.walletAddress}</p>
+                    <p><strong>Role:</strong> ${currentUser.role}</p>
+                    <p><strong>Verified:</strong> ${currentUser.isVerified ? 'Yes' : 'No'}</p>
+                    <p><strong>Last Login:</strong> ${new Date(currentUser.lastLogin).toLocaleString()}</p>
+                `;
+            }
+        }
+
+        // Check for existing session on load
+        window.addEventListener('load', () => {
+            const savedToken = localStorage.getItem('cryptopayx_token');
+            const savedUser = localStorage.getItem('cryptopayx_user');
+            
+            if (savedToken && savedUser) {
+                authToken = savedToken;
+                currentUser = JSON.parse(savedUser);
+                displayUserInfo();
+                showDashboard();
+            }
+        });
+    </script>
+</body>
+</html>
