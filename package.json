@@ -395,10 +395,10 @@
     "daimyo-bonds",
     "shibosai-bonds"
   ],
-  "author": "Khuzaima Aftab (Khuzaima_Epsilonkz) <khuzaimaaftab.crypto@gmail.com> (https://github.com/KhuzaimaAftab-crypto)",
+  "author": "Khuzaima Aftab <khuzaimaaftab.crypto@gmail.com> (Khuzaima_Epsilonkz)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KhuzaimaAftab-crypto/cryptopayx.git"
+    "url": "git+https://github.com/KhuzaimaAftab-crypto/cryptopayx.git"
   },
   "bugs": {
     "url": "https://github.com/KhuzaimaAftab-crypto/cryptopayx/issues"
@@ -411,5 +411,10 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "license": "ISC"
 }

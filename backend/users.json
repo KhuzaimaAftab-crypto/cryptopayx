@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "email": "khuzaima@cryptopayx.com",
+    "password": "7ed78bb73f0f25eac7bdbb1fdaf1e5d574224cb34bc44ad492e01472e1c1a395",
+    "firstName": "Khuzaima",
+    "lastName": "Aftab",
+    "walletAddress": "0x742d35Cc6634C0532925a3b8D78C3A9c2a7e3d5A",
+    "role": "admin",
+    "isVerified": true,
+    "createdAt": "2025-08-31T00:00:00.000Z",
+    "lastLogin": "2025-08-31T05:31:23.646Z"
+  },
+  {
+    "id": 2,
+    "email": "test@cryptopayx.com",
+    "password": "fe6950a57940ebd14871d1e44ff39a3b5c151845962e99b7ed3ebd11a15d3074",
+    "firstName": "Test",
+    "lastName": "User",
+    "walletAddress": "0x1234567890123456789012345678901234567890",
+    "role": "user",
+    "isVerified": false,
+    "createdAt": "2025-08-31T05:33:28.526Z",
+    "lastLogin": null
+  }
+]
